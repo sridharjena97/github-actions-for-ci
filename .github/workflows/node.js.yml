@@ -6,7 +6,10 @@ name: Node CI
 
 on: [push]
 
-jobs:
+      - uses: actions/upload-artifact@master
+        with:
+          name: webpack artifacts
+          path: public/
     build:
       runs-on: ubuntu-latest
       steps:
@@ -42,5 +45,4 @@ jobs:
           npm test
         env:
           CI: true
-
 
